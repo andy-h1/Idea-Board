@@ -7,5 +7,6 @@ body {
  box-sizing: border-box;
  margin: 0 auto;
  max-width: 1200px;
+ font-family: 'Noto Sans JP', sans-serif;
 }
 `;
