@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
   font-family: 'Noto Sans JP', sans-serif;
   border: 5px solid #f7dc6f;
   background-color: #f4d03f;
-  margin: 1em 0;
+  margin: 1em;
 `;
 
 export const Title = styled.h1`
