@@ -7,7 +7,6 @@ export const Wrapper = styled.div`
 export const List = styled.ul`
   list-style: none;
   padding: 0;
-  border: 1px solid black;
   display: grid;
   grid-gap: 1em;
   grid-template: repeat(auto-fill, minmax(300px, 1fr)) / repeat(auto-fill, minmax(300px, 1fr));

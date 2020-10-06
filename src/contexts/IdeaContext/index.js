@@ -12,7 +12,7 @@ export const IdeaContextProvider = ({ children }) => {
   });
   console.log(ideas);
   const addIdea = (title, description) => {
-    setIdeas([...ideas, { title, description, id: uuid(), created: Date.now() }]);
+    setIdeas([...ideas, { title, description, id: uuid(), date: new Date().toLocaleDateString(), time: new Date().toLocaleTimeString() }]);
   };
   const removeIdea = (id) => {
     setIdeas(ideas.filter((idea) => idea.id !== id));
