@@ -3,7 +3,7 @@ import { number, shape, string } from 'prop-types';
 import { IdeaContext } from '../../contexts/IdeaContext';
 import * as S from './styles';
 
-export const IdeasCard = ({ idea: { title, description, id, created } }) => {
+export const IdeasCard = ({ idea: { title, description, id } }) => {
   const { removeIdea } = useContext(IdeaContext);
 
   return (
