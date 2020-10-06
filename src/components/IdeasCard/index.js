@@ -3,8 +3,9 @@ import { number, shape, string } from 'prop-types';
 import { IdeaContext } from '../../contexts/IdeaContext';
 import * as S from './styles';
 
-export const IdeasCard = ({ idea: { title, description, id } }) => {
+export const IdeasCard = ({ idea: { title, description, id, created } }) => {
   const { removeIdea } = useContext(IdeaContext);
+
   return (
     <S.Wrapper>
       <S.Title>{title}</S.Title>
