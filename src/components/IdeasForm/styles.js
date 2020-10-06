@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const Form = styled.form`
-  border: 1px solid blue;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -19,12 +18,14 @@ export const TitleInput = styled.input`
   padding: 1em;
   width: 250px;
   height: auto;
+  font-family: 'Noto Sans JP', sans-serif;
 `;
 
 export const TextArea = styled.textarea`
   padding: 1em;
   width: 250px;
   height: auto;
+  font-family: 'Noto Sans JP', sans-serif;
 `;
 
 export const SubmitButton = styled.button`
@@ -32,4 +33,5 @@ export const SubmitButton = styled.button`
   padding: 1em;
   width: 200px;
   border-radius: 5px;
+  font-family: 'Noto Sans JP', sans-serif;
 `;
