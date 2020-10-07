@@ -6,12 +6,14 @@ export const IdeasForm = () => {
   const { addIdea } = useContext(IdeaContext);
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
+  const [counter, setCounter] = useState(0);
 
   const handleTitle = (event) => {
     setTitle(event.target.value);
   };
   const handleDescription = (event) => {
     setDescription(event.target.value);
+    setCounter(event.target.value.length);
   };
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -46,8 +48,10 @@ export const IdeasForm = () => {
           cols="33"
           value={description}
           onChange={handleDescription}
+          maxLength="140"
           required
         />
+        {counter > 120 && <p>Characters remaining: {140 - counter}</p>}
       </S.Label>
 
       <S.SubmitButton id="submit" name="add-idea" type="submit" value="add-idea">
