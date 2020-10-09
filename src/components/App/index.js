@@ -1,5 +1,4 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { IdeaContextProvider } from '../../contexts/IdeaContext';
 import { IdeaBoardPage } from '../IdeaBoardPage';
 import { IdeasList } from '../IdeasList';
@@ -7,18 +6,16 @@ import { IdeasForm } from '../IdeasForm';
 
 import * as S from './styles';
 
+// do you need react router, if not, remove it
+
 const App = () => {
   return (
-    <BrowserRouter>
+    <IdeaContextProvider>
       <S.GlobalStyle />
-      <Switch>
-        <IdeaContextProvider>
-          <Route exact path="/" component={IdeaBoardPage} />
-          <IdeasForm />
-          <IdeasList />
-        </IdeaContextProvider>
-      </Switch>
-    </BrowserRouter>
+      <IdeaBoardPage />
+      <IdeasForm />
+      <IdeasList />
+    </IdeaContextProvider>
   );
 };
 

@@ -1,4 +1,5 @@
 import React, { createContext, useState, useEffect } from 'react';
+// why v1 over v4
 import { v1 as uuid } from 'uuid';
 
 export const IdeaContext = createContext();
@@ -26,14 +27,14 @@ export const IdeaContextProvider = ({ children }) => {
   };
 
   // const [sortBy, setSortBy] = useState('title_asc');
-  const sortIdea = (sortOption) => {
+  const sortIdea = (sortOption, array) => {
     const sortedIdeas = [...ideas];
     sortedIdeas.sort((a, b) => {
       if (sortOption === 'title_asc') {
         return a.title > b.title;
       }
       if (sortOption === 'title_desc') {
-        return a.title < b.title;
+        return a.title > b.title;
       }
       if (sortOption === 'time_asc') {
         return a.time > b.time;
