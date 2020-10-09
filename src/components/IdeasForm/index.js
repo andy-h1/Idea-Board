@@ -7,6 +7,11 @@ export const IdeasForm = () => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [counter, setCounter] = useState(0);
+  const [isAdding, setAdding] = useState(false);
+
+  const handleAdd = () => {
+    setAdding(true);
+  };
 
   const handleTitle = (event) => {
     setTitle(event.target.value);
@@ -20,43 +25,52 @@ export const IdeasForm = () => {
     addIdea(title, description);
     setTitle('');
     setDescription('');
+    setAdding(false);
   };
 
   return (
-    <S.Form onSubmit={handleSubmit}>
-      <S.Label htmlFor="title">
-        <S.TitleInput
-          id="title"
-          name="title"
-          type="text"
-          placeholder="Idea title"
-          value={title}
-          onChange={handleTitle}
-          autoFocus
-          autoComplete="off"
-          required
-        />
-      </S.Label>
+    <S.FormWrapper>
+      {isAdding ? (
+        <S.Form onSubmit={handleSubmit}>
+          <S.Label htmlFor="title">
+            <S.TitleInput
+              id="title"
+              name="title"
+              type="text"
+              placeholder="Idea title"
+              value={title}
+              onChange={handleTitle}
+              autoFocus
+              autoComplete="off"
+              required
+            />
+          </S.Label>
 
-      <S.Label htmlFor="description">
-        <S.TextArea
-          id="description"
-          name="description"
-          type="text"
-          placeholder="Add your ideas here..."
-          rows="5"
-          cols="33"
-          value={description}
-          onChange={handleDescription}
-          maxLength="140"
-          required
-        />
-        {counter > 120 && <p>Characters remaining: {140 - counter}</p>}
-      </S.Label>
+          <S.Label htmlFor="description">
+            <S.TextArea
+              id="description"
+              name="description"
+              type="text"
+              placeholder="Add your ideas here..."
+              rows="5"
+              cols="33"
+              value={description}
+              onChange={handleDescription}
+              maxLength="140"
+              required
+            />
+            {counter > 120 && <p>Characters remaining: {140 - counter}</p>}
+          </S.Label>
 
-      <S.SubmitButton id="submit" name="add-idea" type="submit" value="add-idea">
-        Add Idea
-      </S.SubmitButton>
-    </S.Form>
+          <S.SubmitButton id="submit" name="add-idea" type="submit" value="add-idea">
+            Add
+          </S.SubmitButton>
+        </S.Form>
+      ) : (
+        <S.AddButton type="button" onClick={handleAdd}>
+          Add Idea
+        </S.AddButton>
+      )}
+    </S.FormWrapper>
   );
 };

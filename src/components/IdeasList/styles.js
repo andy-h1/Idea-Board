@@ -22,3 +22,11 @@ export const TextWrapper = styled.div`
   font-family: 'Caveat', cursive;
   font-size: 1.5em;
 `;
+
+export const SortLabel = styled.label`
+  margin: 3em;
+`;
+
+export const DropDownMenu = styled.select`
+  margin: 1em;
+`;

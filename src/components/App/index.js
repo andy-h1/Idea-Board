@@ -14,8 +14,8 @@ const App = () => {
       <Switch>
         <IdeaContextProvider>
           <Route exact path="/" component={IdeaBoardPage} />
-          <IdeasList />
           <IdeasForm />
+          <IdeasList />
         </IdeaContextProvider>
       </Switch>
     </BrowserRouter>
