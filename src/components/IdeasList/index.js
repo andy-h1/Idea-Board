@@ -5,11 +5,11 @@ import * as S from './styles';
 
 export const IdeasList = () => {
   const { ideas, sortIdea } = useContext(IdeaContext);
-  const [sortBy, setSortBy] = useState('title_asc');
+  const [sortBy, setSortBy] = useState('titleAsc');
   const handleChange = (event) => {
     setSortBy(event.target.value);
-    console.log(sortBy);
     sortIdea(sortBy);
+    console.log(event.target.value);
   };
 
   return ideas.length ? (
@@ -17,10 +17,10 @@ export const IdeasList = () => {
       <S.SortLabel htmlFor="sort-by">
         Sort by:
         <S.DropDownMenu id="sort-by" name="sort-by" onChange={handleChange}>
-          <option value="title_asc">Title (A-Z)</option>
-          <option value="title_desc">Title (Z-A)</option>
-          <option value="time_asc">Time created (earliest)</option>
-          <option value="time_desc">Time created (latest)</option>
+          <option value="titleAsc">Title (A-Z)</option>
+          <option value="titleDesc">Title (Z-A)</option>
+          <option value="timeAsc">Time created (earliest)</option>
+          <option value="timeDesc">Time created (latest)</option>
         </S.DropDownMenu>
       </S.SortLabel>
       <S.List>

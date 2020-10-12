@@ -8,7 +8,6 @@ export const IdeaContext = createContext();
 export const IdeaContextProvider = ({ children }) => {
   const [ideas, setIdeas] = useState(() => {
     const localData = localStorage.getItem('ideas');
-    console.log(localData);
     return localData ? JSON.parse(localData) : [];
   });
   const addIdea = (title, description) => {
@@ -26,31 +25,35 @@ export const IdeaContextProvider = ({ children }) => {
     );
   };
 
-  // const [sortBy, setSortBy] = useState('title_asc');
-  const sortIdea = (sortOption, array) => {
-    const sortedIdeas = [...ideas];
-    sortedIdeas.sort((a, b) => {
-      if (sortOption === 'title_asc') {
-        return a.title > b.title;
+  const sortIdea = (sortOption) => {
+    const sortedArray = [...ideas].sort((a, b) => {
+      if (sortOption === 'titleAsc') {
+        return a.title.toUpperCase() > b.title.toUpperCase() ? -1 : 1;
       }
-      if (sortOption === 'title_desc') {
-        return a.title > b.title;
+      if (sortOption === 'titleDesc') {
+        return a.title.toUpperCase() < b.title.toUpperCase() ? -1 : 1;
       }
-      if (sortOption === 'time_asc') {
-        return a.time > b.time;
+      if (sortOption === 'timeAsc') {
+        return a.time > b.time ? -1 : 1;
       }
-      if (sortOption === 'time_desc') {
-        return a.time < b.time;
+      if (sortOption === 'timeDesc') {
+        return a.time < b.time ? -1 : 1;
       }
-      return ideas;
+      return 0;
     });
+    console.log(sortedArray);
+    setIdeas(sortedArray);
   };
 
   useEffect(() => {
     localStorage.setItem('ideas', JSON.stringify(ideas));
   }, [ideas]);
 
-  return <IdeaContext.Provider value={{ ideas, addIdea, removeIdea, sortIdea, updateIdea }}>{children}</IdeaContext.Provider>;
+  return (
+    <IdeaContext.Provider value={{ ideas, addIdea, removeIdea, sortIdea, updateIdea }}>
+      {children}
+    </IdeaContext.Provider>
+  );
 };
 
 // { title: "What's the big idea?", description: 'Not sure doc...', id: 1 },

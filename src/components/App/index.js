@@ -2,7 +2,6 @@ import React from 'react';
 import { IdeaContextProvider } from '../../contexts/IdeaContext';
 import { IdeaBoardPage } from '../IdeaBoardPage';
 import { IdeasList } from '../IdeasList';
-import { IdeasForm } from '../IdeasForm';
 
 import * as S from './styles';
 
@@ -13,7 +12,6 @@ const App = () => {
     <IdeaContextProvider>
       <S.GlobalStyle />
       <IdeaBoardPage />
-      <IdeasForm />
       <IdeasList />
     </IdeaContextProvider>
   );
