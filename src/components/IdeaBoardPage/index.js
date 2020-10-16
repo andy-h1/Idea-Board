@@ -7,20 +7,16 @@ export const IdeaBoardPage = () => {
   const { ideas } = useContext(IdeaContext);
   const [isAdding, setAdding] = useState(false);
 
-  const handleAdd = () => {
-    setAdding(true);
-  };
-
   return (
     <>
       <S.Wrapper>
         <S.Title>Idea Board Page</S.Title>
-        <p> Currently you&apos;ve come up with {ideas.length} ideas!!</p>
+        <p>Currently you&apos;ve come up with {ideas.length} ideas!!</p>
       </S.Wrapper>
       {isAdding ? (
         <IdeasForm />
       ) : (
-        <button type="button" onClick={handleAdd}>
+        <button type="button" onClick={() => setAdding(true)}>
           Add Idea
         </button>
       )}

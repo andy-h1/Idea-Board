@@ -1,6 +1,6 @@
 import React, { createContext, useState, useEffect } from 'react';
 // why v1 over v4
-import { v1 as uuid } from 'uuid';
+import { v4 as uuid } from 'uuid';
 
 export const IdeaContext = createContext();
 
@@ -8,8 +8,11 @@ export const IdeaContext = createContext();
 export const IdeaContextProvider = ({ children }) => {
   const [ideas, setIdeas] = useState(() => {
     const localData = localStorage.getItem('ideas');
+    console.log({ localData });
     return localData ? JSON.parse(localData) : [];
   });
+
+  console.log({ ideas });
   const addIdea = (title, description) => {
     setIdeas([...ideas, { title, description, id: uuid(), time: new Date().toLocaleTimeString() }]);
   };
@@ -18,12 +21,15 @@ export const IdeaContextProvider = ({ children }) => {
   };
 
   const updateIdea = (updatedIdea, id) => {
-    setIdeas(
-      ideas.map((idea) => {
-        return idea.id === id ? updatedIdea : idea;
-      })
-    );
+    setIdeas(ideas.map((idea) => (idea.id === id ? updatedIdea : idea)));
   };
+
+  // const updateIdea = (updatedIdea, id) => {
+  //   setIdeas([...ideas, { updatedIdea, updated: new Date().toLocaleTimeString() }]);
+  //   ideas.map((idea) => {
+  //     return idea.id === id ? updatedIdea : idea;
+  //   })
+  // };
 
   const sortIdea = (sortOption) => {
     const sortedArray = [...ideas].sort((a, b) => {
@@ -50,35 +56,6 @@ export const IdeaContextProvider = ({ children }) => {
   }, [ideas]);
 
   return (
-    <IdeaContext.Provider value={{ ideas, addIdea, removeIdea, sortIdea, updateIdea }}>
-      {children}
-    </IdeaContext.Provider>
+    <IdeaContext.Provider value={{ ideas, addIdea, removeIdea, sortIdea, updateIdea }}>{children}</IdeaContext.Provider>
   );
 };
-
-// { title: "What's the big idea?", description: 'Not sure doc...', id: 1 },
-// { title: 'Is Java and Javascript related?', description: "No it's not", id: 2 }
-// const sortIdea = (option) => {
-//   const sortedArray = [...ideas].sort(a, b);
-//   switch (option) {
-//     case 'title_asc':
-//       return a.title < b.title;
-//   }
-// };
-
-// const sortIdeaTitle = [...ideas].sort((a, b) => {
-//   if (a.title < b.title) {
-//     return -1;
-//   }
-//   if (a.title > b.title) {
-//     return 1;
-//   }
-//   return 0;
-// });
-
-// const sortIdeaTime = ideas.sort((a, b) => {
-//   if (a.time < b.time) {
-//     return -1;
-//   }
-//   return 0;
-// });

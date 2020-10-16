@@ -11,10 +11,12 @@ export const IdeasForm = () => {
   const handleTitle = (event) => {
     setTitle(event.target.value);
   };
+  
   const handleDescription = (event) => {
     setDescription(event.target.value);
     setCharacterCounter(event.target.value.length);
   };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     addIdea(title, description);
