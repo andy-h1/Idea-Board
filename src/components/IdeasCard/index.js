@@ -9,8 +9,13 @@ export const IdeasCard = ({ idea }) => {
   const [isEditing, setEditing] = useState(false);
   const [updatedTitle, setUpdatedTitle] = useState(title);
   const [updatedDescription, setUpdatedDescription] = useState(description);
-  const handleUpdate = () => {
+
+  const handleEdit = () => {
     setEditing(true);
+  };
+
+  const handleCancelEdit = () => {
+    setEditing(false);
   };
 
   const handleChangeTitle = (event) => {
@@ -27,43 +32,40 @@ export const IdeasCard = ({ idea }) => {
   //   console.log(updatedIdea);
   // };
 
-  function handleSubmit(event) {
+  const handleUpdate = () => {
     console.log('clicked');
-    event.preventDefault();
-    const andyUpdated = {
-      // original idea
+    const updatedIdea = {
+      // all the original idea values
       ...idea,
-      // overwriting some parts of the original idea
+      // only shit that has changed
       title: updatedTitle,
       description: updatedDescription,
-      id,
       time: new Date().toLocaleTimeString(),
       updated: true
     };
-    // const updatedIdea = {
-    //   // all the original idea values
-    //   ...idea,
-    //   // only shit that has changed
-    //   title: updatedTitle,
-    //   description: updatedDescription,
-    //   updated: new Date().toLocaleTimeString()
-    // };
 
     // when created NO updated property
     // when editing, ADD updated property
-    updateIdea(andyUpdated, id);
+    updateIdea(updatedIdea, id);
     setEditing(false);
-  }
+  };
 
   return (
     <div>
       {isEditing ? (
-        <div>
-          <label htmlFor="title-input">
-            <input type="text" defaultValue={title} name="title" onChange={handleChangeTitle} autoComplete="off" />
+        <S.CardWrapper>
+          <label htmlFor="title">
+            <S.TitleInput
+              type="text"
+              defaultValue={title}
+              name="title"
+              onChange={handleChangeTitle}
+              autoComplete="off"
+              autoFocus
+            />
           </label>
-          <label htmlFor="description-input">
-            <textarea
+          <label htmlFor="description">
+            <S.DescriptionInput
               type="text"
               defaultValue={description}
               name="description"
@@ -72,24 +74,32 @@ export const IdeasCard = ({ idea }) => {
               cols="33"
             />
           </label>
-          <button type="button" onClick={handleSubmit}>
-            Update Idea
-          </button>
-        </div>
+          <S.ButtonWrapper>
+            <S.Button type="button" onClick={handleUpdate}>
+              Update Idea
+            </S.Button>
+            <S.Button type="button" onClick={handleCancelEdit}>
+              Cancel
+            </S.Button>
+          </S.ButtonWrapper>
+        </S.CardWrapper>
       ) : (
-        <S.Wrapper>
+        <S.CardWrapper>
           <S.Title>{title}</S.Title>
-          <S.Paragraph>{description}</S.Paragraph>
-          <p>
+          <S.Description>{description}</S.Description>
+          <S.Time>
             Time {idea.updated ? 'updated' : 'created'}: {time}
-          </p>
-          <button type="button" onClick={() => removeIdea(id)}>
-            Delete
-          </button>
-          <button type="button" onClick={handleUpdate}>
-            Edit
-          </button>
-        </S.Wrapper>
+          </S.Time>
+
+          <S.ButtonWrapper>
+            <S.Button type="button" onClick={() => removeIdea(id)}>
+              Delete
+            </S.Button>
+            <S.Button type="button" onClick={handleEdit}>
+              Edit
+            </S.Button>
+          </S.ButtonWrapper>
+        </S.CardWrapper>
       )}
     </div>
   );
