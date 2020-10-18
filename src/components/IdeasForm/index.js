@@ -11,7 +11,7 @@ export const IdeasForm = () => {
   const handleTitle = (event) => {
     setTitle(event.target.value);
   };
-  
+
   const handleDescription = (event) => {
     setDescription(event.target.value);
     setCharacterCounter(event.target.value.length);
@@ -60,6 +60,9 @@ export const IdeasForm = () => {
         <S.SubmitButton id="submit" name="add-idea" type="submit" value="add-idea">
           Add
         </S.SubmitButton>
+        <button type="button" name="cancel">
+          Cancel
+        </button>
       </S.Form>
     </S.FormWrapper>
   );

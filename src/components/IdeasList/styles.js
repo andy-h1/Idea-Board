@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  margin: 1em;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const List = styled.ul`
@@ -9,7 +11,7 @@ export const List = styled.ul`
   padding: 0;
   display: grid;
   grid-gap: 1em;
-  grid-template: repeat(auto-fill, minmax(300px, 1fr)) / repeat(auto-fill, minmax(300px, 1fr));
+  grid-template: repeat(auto-fill, minmax(320px, 1fr)) / repeat(auto-fill, minmax(320px, 1fr));
   /* grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-template-rows: repeat(auto-fill, minmax(300px, 1fr)); */
   place-items: center;
@@ -24,9 +26,11 @@ export const TextWrapper = styled.div`
 `;
 
 export const SortLabel = styled.label`
-  margin: 3em;
+  margin: 0 1em;
+  align-self: center;
 `;
 
 export const DropDownMenu = styled.select`
   margin: 1em;
+  font-family: 'Noto Sans JP', sans-serif;
 `;

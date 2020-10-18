@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const CardWrapper = styled.div`
   background-color: #fdd835;
-  border: 1px solid #cfd8dc;
+  border: 1px solid #90a4ae;
   border-radius: 5px;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
   margin: 1em;
@@ -28,9 +28,15 @@ export const DescriptionInput = styled.textarea`
   border: 1px solid #eee;
   font-family: 'Caveat', cursive;
   font-size: 1.4em;
-  margin: 1em 0;
+  margin: 1em 0 0 0;
   width: 100%;
-  height: 175px;
+  height: 150px;
+`;
+
+export const CharacterCounter = styled.p`
+  color: red;
+  margin: 1em 0;
+  font-size: 0.8em;
 `;
 
 export const Title = styled.h3`

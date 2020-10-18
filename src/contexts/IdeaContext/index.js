@@ -37,7 +37,7 @@ export const IdeaContextProvider = ({ children }) => {
         return a.title.toUpperCase() > b.title.toUpperCase() ? -1 : 1;
       }
       if (sortOption === 'titleDesc') {
-        return a.title.toUpperCase() < b.title.toUpperCase() ? -1 : 1;
+        return a.title.toUpperCase() > b.title.toUpperCase() ? 1 : -1;
       }
       if (sortOption === 'timeAsc') {
         return a.time > b.time ? -1 : 1;

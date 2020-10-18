@@ -9,6 +9,7 @@ export const IdeasCard = ({ idea }) => {
   const [isEditing, setEditing] = useState(false);
   const [updatedTitle, setUpdatedTitle] = useState(title);
   const [updatedDescription, setUpdatedDescription] = useState(description);
+  const [characterCounter, setCharacterCounter] = useState(0);
 
   const handleEdit = () => {
     setEditing(true);
@@ -16,6 +17,7 @@ export const IdeasCard = ({ idea }) => {
 
   const handleCancelEdit = () => {
     setEditing(false);
+    setCharacterCounter(0);
   };
 
   const handleChangeTitle = (event) => {
@@ -24,13 +26,8 @@ export const IdeasCard = ({ idea }) => {
 
   const handleChangeDescription = (event) => {
     setUpdatedDescription(event.target.value);
+    setCharacterCounter(event.target.value.length);
   };
-
-  // const handleChange = (event) => {
-  //   const { name, value } = event.target;
-  //   setUpdatedIdea({ ...updatedIdea, [name]: value, id, updatedTime: new Date().toLocaleTimeString() });
-  //   console.log(updatedIdea);
-  // };
 
   const handleUpdate = () => {
     console.log('clicked');
@@ -70,9 +67,13 @@ export const IdeasCard = ({ idea }) => {
               defaultValue={description}
               name="description"
               onChange={handleChangeDescription}
+              maxLength="140"
               rows="5"
               cols="33"
             />
+            {characterCounter > 120 && (
+              <S.CharacterCounter>Characters remaining: {140 - characterCounter}</S.CharacterCounter>
+            )}
           </label>
           <S.ButtonWrapper>
             <S.Button type="button" onClick={handleUpdate}>
