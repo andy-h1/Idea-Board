@@ -26,7 +26,7 @@ export const TextWrapper = styled.div`
 `;
 
 export const SortLabel = styled.label`
-  margin: 0 1em;
+  margin: 1em;
   align-self: center;
 `;
 

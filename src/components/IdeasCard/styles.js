@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const CardWrapper = styled.div`
   background-color: #fdd835;
   border: 1px solid #90a4ae;
-  border-radius: 5px;
+  border-radius: 0.5em;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
   margin: 1em;
   padding: 1em;

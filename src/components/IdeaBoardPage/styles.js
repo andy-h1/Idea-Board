@@ -14,11 +14,3 @@ export const Title = styled.h1`
   text-align: center;
   padding: 1em;
 `;
-
-export const SortLabel = styled.label`
-  margin: 3em;
-`;
-
-export const DropDownMenu = styled.select`
-  margin: 1em;
-`;

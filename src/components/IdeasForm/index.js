@@ -7,6 +7,7 @@ export const IdeasForm = () => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [characterCounter, setCharacterCounter] = useState(0);
+  const [isAdding, setAdding] = useState(false);
 
   const handleTitle = (event) => {
     setTitle(event.target.value);
@@ -24,46 +25,61 @@ export const IdeasForm = () => {
     setDescription('');
   };
 
+  const handleChange = () => {
+    console.log('clicked');
+    setAdding(false);
+  };
+
   return (
     <S.FormWrapper>
-      <S.Form onSubmit={handleSubmit}>
-        <S.Label htmlFor="title">
-          <S.TitleInput
-            id="title"
-            name="title"
-            type="text"
-            placeholder="Idea title"
-            value={title}
-            onChange={handleTitle}
-            autoFocus
-            autoComplete="off"
-            required
-          />
-        </S.Label>
+      {isAdding ? (
+        <S.Form onSubmit={handleSubmit}>
+          <S.Label htmlFor="title">
+            <S.TitleInput
+              id="title"
+              name="title"
+              type="text"
+              placeholder="Idea title"
+              value={title}
+              onChange={handleTitle}
+              autoFocus
+              autoComplete="off"
+              required
+            />
+          </S.Label>
 
-        <S.Label htmlFor="description">
-          <S.TextArea
-            id="description"
-            name="description"
-            type="text"
-            placeholder="Add your ideas here..."
-            rows="5"
-            cols="33"
-            value={description}
-            onChange={handleDescription}
-            maxLength="140"
-            required
-          />
-          {characterCounter > 120 && <p>Characters remaining: {140 - characterCounter}</p>}
-        </S.Label>
+          <S.Label htmlFor="description">
+            <S.TextArea
+              id="description"
+              name="description"
+              type="text"
+              placeholder="Add your ideas here..."
+              rows="5"
+              cols="33"
+              value={description}
+              onChange={handleDescription}
+              maxLength="140"
+              required
+            />
+            {characterCounter > 120 && (
+              <S.CharacterCounter>Characters remaining: {140 - characterCounter}</S.CharacterCounter>
+            )}
+          </S.Label>
 
-        <S.SubmitButton id="submit" name="add-idea" type="submit" value="add-idea">
-          Add
-        </S.SubmitButton>
-        <button type="button" name="cancel">
-          Cancel
-        </button>
-      </S.Form>
+          <S.ButtonWrapper>
+            <S.Button id="submit" name="add-idea" type="submit" value="add-idea" onClick={handleChange}>
+              Add
+            </S.Button>
+            <S.Button type="button" name="cancel" onClick={handleChange}>
+              Cancel
+            </S.Button>
+          </S.ButtonWrapper>
+        </S.Form>
+      ) : (
+        <S.AddIdeaButton type="button" onClick={() => setAdding(true)}>
+          Add Idea
+        </S.AddIdeaButton>
+      )}
     </S.FormWrapper>
   );
 };

@@ -24,13 +24,6 @@ export const IdeaContextProvider = ({ children }) => {
     setIdeas(ideas.map((idea) => (idea.id === id ? updatedIdea : idea)));
   };
 
-  // const updateIdea = (updatedIdea, id) => {
-  //   setIdeas([...ideas, { updatedIdea, updated: new Date().toLocaleTimeString() }]);
-  //   ideas.map((idea) => {
-  //     return idea.id === id ? updatedIdea : idea;
-  //   })
-  // };
-
   const sortIdea = (sortOption) => {
     const sortedArray = [...ideas].sort((a, b) => {
       if (sortOption === 'titleAsc') {
