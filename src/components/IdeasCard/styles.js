@@ -75,3 +75,7 @@ export const Button = styled.button`
   width: 100%;
   cursor: pointer;
 `;
+
+export const Label = styled.label`
+  margin: 0em;
+`;

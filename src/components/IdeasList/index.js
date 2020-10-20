@@ -9,7 +9,6 @@ export const IdeasList = () => {
   const handleChange = (event) => {
     setSortBy(event.target.value);
     sortIdea(sortBy);
-    console.log(event.target.value);
   };
 
   return ideas.length ? (

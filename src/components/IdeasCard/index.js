@@ -30,19 +30,13 @@ export const IdeasCard = ({ idea }) => {
   };
 
   const handleUpdate = () => {
-    console.log('clicked');
     const updatedIdea = {
-      // all the original idea values
       ...idea,
-      // only shit that has changed
       title: updatedTitle,
       description: updatedDescription,
       time: new Date().toLocaleTimeString(),
       updated: true
     };
-
-    // when created NO updated property
-    // when editing, ADD updated property
     updateIdea(updatedIdea, id);
     setEditing(false);
   };
@@ -51,7 +45,7 @@ export const IdeasCard = ({ idea }) => {
     <div>
       {isEditing ? (
         <S.CardWrapper>
-          <label htmlFor="title">
+          <S.Label htmlFor="title">
             <S.TitleInput
               type="text"
               defaultValue={title}
@@ -60,8 +54,8 @@ export const IdeasCard = ({ idea }) => {
               autoComplete="off"
               autoFocus
             />
-          </label>
-          <label htmlFor="description">
+          </S.Label>
+          <S.Label htmlFor="description">
             <S.DescriptionInput
               type="text"
               defaultValue={description}
@@ -74,7 +68,7 @@ export const IdeasCard = ({ idea }) => {
             {characterCounter > 120 && (
               <S.CharacterCounter>Characters remaining: {140 - characterCounter}</S.CharacterCounter>
             )}
-          </label>
+          </S.Label>
           <S.ButtonWrapper>
             <S.Button type="button" onClick={handleUpdate}>
               Update Idea

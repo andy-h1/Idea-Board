@@ -8,11 +8,9 @@ export const IdeaContext = createContext();
 export const IdeaContextProvider = ({ children }) => {
   const [ideas, setIdeas] = useState(() => {
     const localData = localStorage.getItem('ideas');
-    console.log({ localData });
     return localData ? JSON.parse(localData) : [];
   });
 
-  console.log({ ideas });
   const addIdea = (title, description) => {
     setIdeas([...ideas, { title, description, id: uuid(), time: new Date().toLocaleTimeString() }]);
   };
@@ -40,7 +38,6 @@ export const IdeaContextProvider = ({ children }) => {
       }
       return 0;
     });
-    console.log(sortedArray);
     setIdeas(sortedArray);
   };
 
