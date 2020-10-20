@@ -7,7 +7,7 @@ export const IdeaBoardPage = () => {
 
   return (
     <S.Wrapper>
-      <S.Title>Idea Board Page</S.Title>
+      <S.Title>Ideas Board</S.Title>
       <p>Currently you&apos;ve come up with {ideas.length} ideas!!</p>
     </S.Wrapper>
   );

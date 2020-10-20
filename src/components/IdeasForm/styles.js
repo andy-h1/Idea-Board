@@ -56,7 +56,7 @@ export const ButtonWrapper = styled.div`
 export const Button = styled.button`
   margin: 0 0.5em;
   padding: 0.5em;
-  background-color: #f57f17;
+  background-color: #2980b9;
   border-radius: 0.5em;
   border: none;
   color: white;
@@ -70,7 +70,7 @@ export const Button = styled.button`
 export const AddIdeaButton = styled.button`
   margin: 1em;
   padding: 0.5em;
-  background-color: #f57f17;
+  background-color: #2980b9;
   border-radius: 0.5em;
   border: none;
   color: white;

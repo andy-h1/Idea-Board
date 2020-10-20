@@ -23,17 +23,17 @@ export const IdeasForm = () => {
     addIdea(title, description);
     setTitle('');
     setDescription('');
+    setAdding(false);
   };
 
-  const handleChange = () => {
-    console.log('clicked');
+  const handleCancel = () => {
     setAdding(false);
   };
 
   return (
     <S.FormWrapper>
       {isAdding ? (
-        <S.Form onSubmit={handleSubmit}>
+        <S.Form>
           <S.Label htmlFor="title">
             <S.TitleInput
               id="title"
@@ -67,10 +67,10 @@ export const IdeasForm = () => {
           </S.Label>
 
           <S.ButtonWrapper>
-            <S.Button id="submit" name="add-idea" type="submit" value="add-idea" onClick={handleChange}>
+            <S.Button id="submit" name="add-idea" type="submit" value="add-idea" onClick={handleSubmit}>
               Add
             </S.Button>
-            <S.Button type="button" name="cancel" onClick={handleChange}>
+            <S.Button type="button" name="cancel" onClick={handleCancel}>
               Cancel
             </S.Button>
           </S.ButtonWrapper>
