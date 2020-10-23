@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { IdeaContext } from '../../contexts/IdeaContext';
-import { IdeasCard } from '../IdeasCard';
+import { IdeaCard } from '../IdeaCard';
 import * as S from './styles';
 
 export const IdeasList = () => {
@@ -24,7 +24,7 @@ export const IdeasList = () => {
       </S.SortLabel>
       <S.List>
         {ideas.map((idea) => (
-          <IdeasCard idea={idea} key={idea.id} />
+          <IdeaCard idea={idea} key={idea.id} />
         ))}
       </S.List>
     </S.Wrapper>

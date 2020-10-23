@@ -3,7 +3,7 @@ import { shape, string } from 'prop-types';
 import { IdeaContext } from '../../contexts/IdeaContext';
 import * as S from './styles';
 
-export const IdeasCard = ({ idea }) => {
+export const IdeaCard = ({ idea }) => {
   const { title, description, id, time } = idea;
   const { updateIdea, removeIdea } = useContext(IdeaContext);
   const [isEditing, setEditing] = useState(false);
@@ -100,10 +100,11 @@ export const IdeasCard = ({ idea }) => {
   );
 };
 
-IdeasCard.propTypes = {
+IdeaCard.propTypes = {
   idea: shape({
+    description: string.isRequired,
     id: string.isRequired,
-    title: string.isRequired,
-    description: string.isRequired
+    time: string.isRequired,
+    title: string.isRequired
   }).isRequired
 };

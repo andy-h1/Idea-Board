@@ -1,5 +1,4 @@
 import React, { createContext, useState, useEffect } from 'react';
-// why v1 over v4
 import { v4 as uuid } from 'uuid';
 
 export const IdeaContext = createContext();
