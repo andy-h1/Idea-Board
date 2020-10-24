@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Ideas List Component should render 1`] = `
+<div
+  class="sc-iqAbSa drSwsX"
+>
+  <p>
+    An idea that is developed and put into action is more important than an idea that exists only as an idea...
+  </p>
+</div>
+`;

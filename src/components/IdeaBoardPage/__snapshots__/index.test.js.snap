@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Ideas Page Component should render 1`] = `
+<div
+  class="sc-bdnylx kyNVai"
+>
+  <h1
+    class="sc-gtssRu cKXJs"
+  >
+    Ideas Board
+  </h1>
+  <p>
+    Currently you've come up with 
+    0
+     ideas!!
+  </p>
+</div>
+`;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import IdeasForm from '.';
+import { IdeasForm } from '.';
 
 describe('Ideas Form Component', () => {
   it('should render', () => {

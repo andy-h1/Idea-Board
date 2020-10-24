@@ -1,21 +1,20 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { IdeaContext } from '../../contexts/IdeaContext';
 import { IdeaCard } from '../IdeaCard';
 import * as S from './styles';
 
 export const IdeasList = () => {
   const { ideas, sortIdea } = useContext(IdeaContext);
-  const [sortBy, setSortBy] = useState('titleAsc');
+
   const handleChange = (event) => {
-    setSortBy(event.target.value);
-    sortIdea(sortBy);
+    sortIdea(event.target.value);
   };
 
   return ideas.length ? (
     <S.Wrapper>
       <S.SortLabel htmlFor="sort-by">
         Sort by:
-        <S.DropDownMenu id="sort-by" name="sort-by" onChange={handleChange}>
+        <S.DropDownMenu id="sort-by" name="sort-by" onChange={handleChange} data-testid="dropdown">
           <option value="titleAsc">Title (A-Z)</option>
           <option value="titleDesc">Title (Z-A)</option>
           <option value="timeAsc">Time created (earliest)</option>

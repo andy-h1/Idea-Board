@@ -6,8 +6,6 @@ import { IdeasList } from '../IdeasList';
 
 import * as S from './styles';
 
-// do you need react router, if not, remove it
-
 const App = () => {
   return (
     <IdeaContextProvider>
