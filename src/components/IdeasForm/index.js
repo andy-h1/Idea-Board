@@ -33,9 +33,10 @@ export const IdeasForm = () => {
   return (
     <S.FormWrapper>
       {isAdding ? (
-        <S.Form>
+        <S.Form data-testid="ideasFormForm">
           <S.Label htmlFor="title">
             <S.TitleInput
+              data-testid="titleInput"
               id="title"
               name="title"
               type="text"
@@ -49,34 +50,42 @@ export const IdeasForm = () => {
           </S.Label>
 
           <S.Label htmlFor="description">
-            <S.TextArea
+            {/* Should be text area, google around it */}
+            <input
+              data-testid="descriptionInput"
               id="description"
               name="description"
               type="text"
               placeholder="Add your ideas here..."
-              rows="5"
-              cols="33"
               value={description}
               onChange={handleDescription}
               maxLength="140"
               required
             />
+
             {characterCounter > 120 && (
               <S.CharacterCounter>Characters remaining: {140 - characterCounter}</S.CharacterCounter>
             )}
           </S.Label>
 
           <S.ButtonWrapper>
-            <S.Button id="submit" name="add-idea" type="submit" value="add-idea" onClick={handleSubmit}>
+            <S.Button
+              data-testid="submitButton"
+              id="submit"
+              name="add-idea"
+              type="submit"
+              value="add-idea"
+              onClick={handleSubmit}
+            >
               Add
             </S.Button>
-            <S.Button type="button" name="cancel" onClick={handleCancel}>
+            <S.Button data-testid="cancelButton" type="button" name="cancel" onClick={handleCancel}>
               Cancel
             </S.Button>
           </S.ButtonWrapper>
         </S.Form>
       ) : (
-        <S.AddIdeaButton type="button" onClick={() => setAdding(true)}>
+        <S.AddIdeaButton data-testid="addIdeaButton" type="button" onClick={() => setAdding(true)}>
           Add Idea
         </S.AddIdeaButton>
       )}

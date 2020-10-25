@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Ideas Form Component should render 1`] = `
+<div
+  class="sc-bdnylx kFTTcc"
+>
+  <button
+    class="sc-fujyUd TVRAI"
+    data-testid="addIdeaButton"
+    type="button"
+  >
+    Add Idea
+  </button>
+</div>
+`;

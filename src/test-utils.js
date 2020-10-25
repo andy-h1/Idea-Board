@@ -6,6 +6,7 @@ const AllTheProviders = ({ children, customContext }) => (
   <IdeaContext.Provider
     value={{
       ideas: [],
+      addIdea: () => null,
       sortIdea: () => null,
       ...customContext
     }}
