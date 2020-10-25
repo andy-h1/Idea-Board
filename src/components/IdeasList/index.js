@@ -21,7 +21,7 @@ export const IdeasList = () => {
           <option value="timeDesc">Time created (latest)</option>
         </S.DropDownMenu>
       </S.SortLabel>
-      <S.List>
+      <S.List data-testid="ideas-list">
         {ideas.map((idea) => (
           <IdeaCard idea={idea} key={idea.id} />
         ))}
