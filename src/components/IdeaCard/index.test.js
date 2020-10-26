@@ -1,5 +1,6 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { render } from '../../test-utils';
 import { IdeaCard } from '.';
 
 const idea = {
@@ -11,11 +12,15 @@ const idea = {
 
 describe('Idea Card Component', () => {
   it('should render', () => {
-    const { container } = render(<IdeaCard {...idea} />);
+    const { container } = render(<IdeaCard />);
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  it.todo('should render form when user clicks edit');
+  it.only('should render form when user clicks edit', () => {
+    const { getByTestId } = render(<IdeaCard />, { idea });
+    userEvent.click(getByTestId('editButton'));
+    expect(getByTestId('updateIdeaForm'));
+  });
   // user clicks the 'edit' button
   // card should show two input fields
   // input fields should show current data

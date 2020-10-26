@@ -44,7 +44,7 @@ export const IdeaCard = ({ idea }) => {
   return (
     <div>
       {isEditing ? (
-        <S.CardWrapper>
+        <S.CardWrapper data-testid="updateIdeaForm">
           <S.Label htmlFor="title">
             <S.TitleInput
               type="text"
@@ -90,7 +90,7 @@ export const IdeaCard = ({ idea }) => {
             <S.Button type="button" onClick={() => removeIdea(id)}>
               Delete
             </S.Button>
-            <S.Button type="button" onClick={handleEdit}>
+            <S.Button data-testid="editButton" type="button" onClick={handleEdit}>
               Edit
             </S.Button>
           </S.ButtonWrapper>

@@ -9,6 +9,8 @@ export const IdeasForm = () => {
   const [characterCounter, setCharacterCounter] = useState(0);
   const [isAdding, setAdding] = useState(false);
 
+  console.log({ title, description });
+
   const handleTitle = (event) => {
     setTitle(event.target.value);
   };
@@ -25,11 +27,7 @@ export const IdeasForm = () => {
     setDescription('');
     setAdding(false);
   };
-
-  const handleCancel = () => {
-    setAdding(false);
-  };
-
+  
   return (
     <S.FormWrapper>
       {isAdding ? (
@@ -51,7 +49,7 @@ export const IdeasForm = () => {
 
           <S.Label htmlFor="description">
             {/* Should be text area, google around it */}
-            <input
+            <S.DescriptionInput
               data-testid="descriptionInput"
               id="description"
               name="description"
@@ -79,7 +77,7 @@ export const IdeasForm = () => {
             >
               Add
             </S.Button>
-            <S.Button data-testid="cancelButton" type="button" name="cancel" onClick={handleCancel}>
+            <S.Button data-testid="cancelButton" type="button" name="cancel" onClick={() => setAdding(false)}>
               Cancel
             </S.Button>
           </S.ButtonWrapper>

@@ -9,7 +9,7 @@ describe('Ideas Form Component', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  it('should call addIdea with correct values', () => {
+  it.only('should call addIdea with correct values', () => {
     // render component
     const addIdea = jest.fn();
     const { getByTestId, queryByTestId } = render(<IdeasForm />, { addIdea });
