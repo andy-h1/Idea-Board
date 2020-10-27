@@ -96,9 +96,12 @@ describe('Idea Card Component', () => {
 
   it('should call remove idea when user clicks delete button', () => {
     const removeIdea = jest.fn();
-    const { getByTestId, queryByTestId } = render(<IdeaCard idea={idea} />, { removeIdea });
+    const { getByTestId } = render(<IdeaCard idea={idea} />, { ...defaultContext, removeIdea });
     userEvent.click(getByTestId('removeButton'));
     expect(removeIdea).toHaveBeenCalledWith(idea.id);
-    // expect(queryByTestId('ideaCard')).toBe(undefined);
   });
 });
+
+// is there a way to import form into the idea card to update state
+// with the update tests should I write the step by step scenario of what should happen when the user interacts with the page or does it not matter?
+// when removing idea - shouldn't the ideacard return null/undefined?

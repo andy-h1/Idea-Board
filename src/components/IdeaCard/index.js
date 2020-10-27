@@ -68,8 +68,6 @@ export const IdeaCard = ({ idea }) => {
               name="description"
               onChange={handleChangeDescription}
               maxLength="140"
-              rows="5"
-              cols="33"
             />
             {characterCounter > 120 && (
               <S.CharacterCounter>Characters remaining: {140 - characterCounter}</S.CharacterCounter>

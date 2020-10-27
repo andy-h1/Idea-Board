@@ -27,7 +27,7 @@ export const IdeasForm = () => {
     setDescription('');
     setAdding(false);
   };
-  
+
   return (
     <S.FormWrapper>
       {isAdding ? (
