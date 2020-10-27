@@ -37,8 +37,12 @@ export const IdeaCard = ({ idea }) => {
       time: new Date().toLocaleTimeString(),
       updated: true
     };
-    updateIdea(updatedIdea, id);
+
+    console.log({ updatedTitle, updatedDescription });
+    updateIdea(updatedIdea, id); // just need to check this is called with the right values
+    // i.e. expect(updateIdea).toHaveBeenCalledWith();
     setEditing(false);
+    console.log({ updatedIdea });
   };
 
   return (
@@ -47,6 +51,7 @@ export const IdeaCard = ({ idea }) => {
         <S.CardWrapper data-testid="updateIdeaForm">
           <S.Label htmlFor="title">
             <S.TitleInput
+              data-testid="titleInput"
               type="text"
               defaultValue={title}
               name="title"
@@ -57,6 +62,7 @@ export const IdeaCard = ({ idea }) => {
           </S.Label>
           <S.Label htmlFor="description">
             <S.DescriptionInput
+              data-testid="descriptionInput"
               type="text"
               defaultValue={description}
               name="description"
@@ -70,16 +76,16 @@ export const IdeaCard = ({ idea }) => {
             )}
           </S.Label>
           <S.ButtonWrapper>
-            <S.Button type="button" onClick={handleUpdate}>
+            <S.Button data-testid="updateIdeaButton" type="button" onClick={handleUpdate}>
               Update Idea
             </S.Button>
-            <S.Button type="button" onClick={handleCancelEdit}>
+            <S.Button data-testid="cancelButton" type="button" onClick={handleCancelEdit}>
               Cancel
             </S.Button>
           </S.ButtonWrapper>
         </S.CardWrapper>
       ) : (
-        <S.CardWrapper>
+        <S.CardWrapper data-testid="ideaCard">
           <S.Title>{title}</S.Title>
           <S.Description>{description}</S.Description>
           <S.Time>
@@ -87,7 +93,14 @@ export const IdeaCard = ({ idea }) => {
           </S.Time>
 
           <S.ButtonWrapper>
-            <S.Button type="button" onClick={() => removeIdea(id)}>
+            <S.Button
+              data-testid="removeButton"
+              type="button"
+              onClick={() => {
+                removeIdea(id);
+                console.log('clicked');
+              }}
+            >
               Delete
             </S.Button>
             <S.Button data-testid="editButton" type="button" onClick={handleEdit}>

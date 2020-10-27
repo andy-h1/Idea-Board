@@ -8,6 +8,8 @@ const AllTheProviders = ({ children, customContext }) => (
       ideas: [],
       addIdea: () => null,
       sortIdea: () => null,
+      removeIdea: () => null,
+      updateIdea: () => null,
       ...customContext
     }}
   >
@@ -15,11 +17,10 @@ const AllTheProviders = ({ children, customContext }) => (
   </IdeaContext.Provider>
 );
 
-const customRender = (ui, customContext, options) => {
+const customRender = (ui, customContext) => {
   /* eslint-disable react/display-name */
   return render(ui, {
-    wrapper: () => <AllTheProviders customContext={customContext}>{ui}</AllTheProviders>,
-    ...options
+    wrapper: () => <AllTheProviders customContext={customContext}>{ui}</AllTheProviders>
   });
 };
 
