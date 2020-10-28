@@ -9,6 +9,7 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "babel-plugin-styled-components": "^1.11.1",
+    "jest-environment-jsdom-sixteen": "^1.0.3",
     "lint-staged": "^10.4.2",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
@@ -23,7 +24,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --env jest-environment-jsdom-sixteen",
     "eject": "react-scripts eject",
     "release": "standard-version",
     "lint": "eslint .",
