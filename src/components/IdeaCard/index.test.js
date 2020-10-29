@@ -47,14 +47,6 @@ describe('Idea Card Component', () => {
     userEvent.click(getByTestId('editButton'));
     getByTestId('updateIdeaForm');
 
-    // const updatedIdea = {
-    //   title: 'Rust',
-    //   description: 'Survival Game',
-    //   time: new Date().toLocaleTimeString(),
-    //   updated: true,
-    //   id: idea.id
-    // };
-
     const updatedTitle = 'Rust';
     const updatedDescription = 'Survival Game';
     const time = new Date().toLocaleTimeString();
@@ -90,7 +82,6 @@ describe('Idea Card Component', () => {
 
     userEvent.clear(getByTestId('descriptionInput'));
     userEvent.type(getByTestId('descriptionInput'), description);
-    // once user types over 120 characters render out warning message
     getByText(`Characters remaining: ${140 - description.length}`);
   });
 
@@ -101,7 +92,3 @@ describe('Idea Card Component', () => {
     expect(removeIdea).toHaveBeenCalledWith(idea.id);
   });
 });
-
-// is there a way to import form into the idea card to update state
-// with the update tests should I write the step by step scenario of what should happen when the user interacts with the page or does it not matter?
-// when removing idea - shouldn't the ideacard return null/undefined?

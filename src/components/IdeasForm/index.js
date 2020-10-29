@@ -9,8 +9,6 @@ export const IdeasForm = () => {
   const [characterCounter, setCharacterCounter] = useState(0);
   const [isAdding, setAdding] = useState(false);
 
-  console.log({ title, description });
-
   const handleTitle = (event) => {
     setTitle(event.target.value);
   };
@@ -48,7 +46,6 @@ export const IdeasForm = () => {
           </S.Label>
 
           <S.Label htmlFor="description">
-            {/* Should be text area, google around it */}
             <S.DescriptionInput
               data-testid="descriptionInput"
               id="description"

@@ -2,6 +2,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { IdeaContext } from './contexts/IdeaContext';
 
+// eslint-disable-next-line react/prop-types
 const AllTheProviders = ({ children, customContext }) => (
   <IdeaContext.Provider
     value={{

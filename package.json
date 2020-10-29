@@ -24,7 +24,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env jest-environment-jsdom-sixteen",
+    "test": "react-scripts test --verbose --coverage --no-cache --watchAll=false --env=jest-environment-jsdom-sixteen",
+    "test:watch": "react-scripts test --verbose",
     "eject": "react-scripts eject",
     "release": "standard-version",
     "lint": "eslint .",
@@ -84,6 +85,22 @@
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "jest": {
+    "collectCoverageFrom" : [
+      "src/**/*.{js, ts, tsx}",
+      "!src/index.js",
+      "!src/stories/*",
+      "!src/test-utils.js"
+    ],
+    "coverageThreshold" : {
+      "global" : {
+        "statements" : 5,
+        "branches" : 5,
+        "functions" : 5,
+        "lines" : 5
+      }
     }
   }
 }

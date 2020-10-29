@@ -9,7 +9,6 @@ describe('Ideas Page Component', () => {
   });
 
   it('should show user correct number of ideas created', () => {
-    // set up => write 2 ideas
     const ideas = [
       {
         title: 'Valorant',
@@ -25,10 +24,8 @@ describe('Ideas Page Component', () => {
       }
     ];
 
-    // render the component with the set up
     const { getByText } = render(<IdeaBoardPage />, { ideas });
 
-    // assert that what we expect is true
     getByText(`Currently you've come up with ${ideas.length} ideas!!`);
   });
 });

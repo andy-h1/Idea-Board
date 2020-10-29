@@ -31,17 +31,13 @@ describe('Ideas List Component', () => {
   });
 
   it('should call sortIdea with correct value', () => {
-    // set up
-
     const sortIdea = jest.fn();
 
-    // render
     const { getByTestId } = render(<IdeasList />, { ideas, sortIdea });
     const expectedSortValue = 'timeAsc';
 
-    // faking the user behaviour i.e. clicking a dropdown
     userEvent.selectOptions(getByTestId('dropdown'), [expectedSortValue]);
-    // assert - check it's called with what we expect
+
     expect(sortIdea).toHaveBeenCalledWith(expectedSortValue);
   });
 
@@ -54,10 +50,8 @@ describe('Ideas List Component', () => {
   });
 
   it('should render all the ideas that are present', () => {
-    // render the component with whatever context is needed
     const { getByText } = render(<IdeasList />, { ideas });
 
-    // it should render all the idea titles that are present
     ideas.map((idea) => getByText(`${idea.title}`));
   });
 });

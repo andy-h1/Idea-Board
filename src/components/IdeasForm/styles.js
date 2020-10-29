@@ -35,9 +35,10 @@ export const TitleInput = styled.input`
 `;
 
 export const DescriptionInput = styled.textarea`
+  margin: 0;
   padding: 1em;
   width: 250px;
-  height: auto;
+  height: 100px;
   font-family: 'Noto Sans JP', sans-serif;
 `;
 

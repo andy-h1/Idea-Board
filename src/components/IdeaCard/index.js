@@ -38,11 +38,8 @@ export const IdeaCard = ({ idea }) => {
       updated: true
     };
 
-    console.log({ updatedTitle, updatedDescription });
-    updateIdea(updatedIdea, id); // just need to check this is called with the right values
-    // i.e. expect(updateIdea).toHaveBeenCalledWith();
+    updateIdea(updatedIdea, id);
     setEditing(false);
-    console.log({ updatedIdea });
   };
 
   return (
@@ -96,7 +93,6 @@ export const IdeaCard = ({ idea }) => {
               type="button"
               onClick={() => {
                 removeIdea(id);
-                console.log('clicked');
               }}
             >
               Delete
