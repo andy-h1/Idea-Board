@@ -14,14 +14,14 @@ export const IdeasList = () => {
     <S.Wrapper>
       <S.SortLabel htmlFor="sort-by">
         Sort by:
-        <S.DropDownMenu id="sort-by" name="sort-by" onChange={handleChange} data-testid="dropdown">
+        <S.DropDownMenu id="sort-by" name="sort-by" onChange={handleChange} data-testid="ideasListdropdown">
           <option value="titleAsc">Title (A-Z)</option>
           <option value="titleDesc">Title (Z-A)</option>
           <option value="timeAsc">Time created (earliest)</option>
           <option value="timeDesc">Time created (latest)</option>
         </S.DropDownMenu>
       </S.SortLabel>
-      <S.List data-testid="ideas-list">
+      <S.List data-testid="ideasListList">
         {ideas.map((idea) => (
           <IdeaCard idea={idea} key={idea.id} />
         ))}

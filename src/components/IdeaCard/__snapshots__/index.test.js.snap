@@ -4,7 +4,7 @@ exports[`Idea Card Component should render 1`] = `
 <div>
   <div
     class="sc-bdnylx eHYhos"
-    data-testid="ideaCard"
+    data-testid="ideaCardCard"
   >
     <h3
       class="sc-eCApGN jmaljw"
@@ -29,14 +29,14 @@ exports[`Idea Card Component should render 1`] = `
     >
       <button
         class="sc-fujyUd jNHdoZ"
-        data-testid="removeButton"
+        data-testid="ideaCardRemoveButton"
         type="button"
       >
         Delete
       </button>
       <button
         class="sc-fujyUd jNHdoZ"
-        data-testid="editButton"
+        data-testid="ideaCardEditButton"
         type="button"
       >
         Edit

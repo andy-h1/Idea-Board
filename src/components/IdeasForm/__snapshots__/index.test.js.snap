@@ -6,7 +6,7 @@ exports[`Ideas Form Component should render 1`] = `
 >
   <button
     class="sc-fujyUd TVRAI"
-    data-testid="addIdeaButton"
+    data-testid="ideasFormAddIdeaButton"
     type="button"
   >
     Add Idea

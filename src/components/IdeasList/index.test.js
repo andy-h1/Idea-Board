@@ -36,7 +36,7 @@ describe('Ideas List Component', () => {
     const { getByTestId } = render(<IdeasList />, { ideas, sortIdea });
     const expectedSortValue = 'timeAsc';
 
-    userEvent.selectOptions(getByTestId('dropdown'), [expectedSortValue]);
+    userEvent.selectOptions(getByTestId('ideasListdropdown'), [expectedSortValue]);
 
     expect(sortIdea).toHaveBeenCalledWith(expectedSortValue);
   });

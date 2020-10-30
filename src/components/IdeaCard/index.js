@@ -45,10 +45,10 @@ export const IdeaCard = ({ idea }) => {
   return (
     <div>
       {isEditing ? (
-        <S.CardWrapper data-testid="updateIdeaForm">
+        <S.CardWrapper data-testid="ideaCardForm">
           <S.Label htmlFor="title">
             <S.TitleInput
-              data-testid="titleInput"
+              data-testid="ideaCardTitleInput"
               type="text"
               defaultValue={title}
               name="title"
@@ -59,7 +59,7 @@ export const IdeaCard = ({ idea }) => {
           </S.Label>
           <S.Label htmlFor="description">
             <S.DescriptionInput
-              data-testid="descriptionInput"
+              data-testid="ideaCardDescriptionInput"
               type="text"
               defaultValue={description}
               name="description"
@@ -71,16 +71,16 @@ export const IdeaCard = ({ idea }) => {
             )}
           </S.Label>
           <S.ButtonWrapper>
-            <S.Button data-testid="updateIdeaButton" type="button" onClick={handleUpdate}>
+            <S.Button data-testid="ideaCardUpdateButton" type="button" onClick={handleUpdate}>
               Update Idea
             </S.Button>
-            <S.Button data-testid="cancelButton" type="button" onClick={handleCancelEdit}>
+            <S.Button data-testid="ideaCardCancelButton" type="button" onClick={handleCancelEdit}>
               Cancel
             </S.Button>
           </S.ButtonWrapper>
         </S.CardWrapper>
       ) : (
-        <S.CardWrapper data-testid="ideaCard">
+        <S.CardWrapper data-testid="ideaCardCard">
           <S.Title>{title}</S.Title>
           <S.Description>{description}</S.Description>
           <S.Time>
@@ -89,7 +89,7 @@ export const IdeaCard = ({ idea }) => {
 
           <S.ButtonWrapper>
             <S.Button
-              data-testid="removeButton"
+              data-testid="ideaCardRemoveButton"
               type="button"
               onClick={() => {
                 removeIdea(id);
@@ -97,7 +97,7 @@ export const IdeaCard = ({ idea }) => {
             >
               Delete
             </S.Button>
-            <S.Button data-testid="editButton" type="button" onClick={handleEdit}>
+            <S.Button data-testid="ideaCardEditButton" type="button" onClick={handleEdit}>
               Edit
             </S.Button>
           </S.ButtonWrapper>

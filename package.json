@@ -17,7 +17,6 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.4",
     "standard-version": "^9.0.0",
-    "storybook": "^6.0.27",
     "styled-components": "^5.2.0",
     "uuid": "^8.3.1"
   },
@@ -29,9 +28,7 @@
     "eject": "react-scripts eject",
     "release": "standard-version",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "lint:fix": "eslint . --fix"
   },
   "eslintConfig": {
     "extends": "react-app"

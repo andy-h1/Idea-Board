@@ -32,7 +32,7 @@ export const IdeasForm = () => {
         <S.Form data-testid="ideasFormForm">
           <S.Label htmlFor="title">
             <S.TitleInput
-              data-testid="titleInput"
+              data-testid="ideasFormTitleInput"
               id="title"
               name="title"
               type="text"
@@ -47,7 +47,7 @@ export const IdeasForm = () => {
 
           <S.Label htmlFor="description">
             <S.DescriptionInput
-              data-testid="descriptionInput"
+              data-testid="ideasFormDescriptionInput"
               id="description"
               name="description"
               type="text"
@@ -65,7 +65,7 @@ export const IdeasForm = () => {
 
           <S.ButtonWrapper>
             <S.Button
-              data-testid="submitButton"
+              data-testid="ideasFormSubmitButton"
               id="submit"
               name="add-idea"
               type="submit"
@@ -74,13 +74,13 @@ export const IdeasForm = () => {
             >
               Add
             </S.Button>
-            <S.Button data-testid="cancelButton" type="button" name="cancel" onClick={() => setAdding(false)}>
+            <S.Button data-testid="ideasFormCancelButton" type="button" name="cancel" onClick={() => setAdding(false)}>
               Cancel
             </S.Button>
           </S.ButtonWrapper>
         </S.Form>
       ) : (
-        <S.AddIdeaButton data-testid="addIdeaButton" type="button" onClick={() => setAdding(true)}>
+        <S.AddIdeaButton data-testid="ideasFormAddIdeaButton" type="button" onClick={() => setAdding(true)}>
           Add Idea
         </S.AddIdeaButton>
       )}

@@ -12,15 +12,15 @@ describe('Ideas Form Component', () => {
   it('should call addIdea with correct values', () => {
     const addIdea = jest.fn();
     const { getByTestId, queryByTestId } = render(<IdeasForm />, { addIdea });
-    userEvent.click(getByTestId('addIdeaButton'));
+    userEvent.click(getByTestId('ideasFormAddIdeaButton'));
     getByTestId('ideasFormForm');
 
     const title = 'Valorant';
     const description = 'First Person Shooter';
-    userEvent.type(getByTestId('titleInput'), title);
+    userEvent.type(getByTestId('ideasFormTitleInput'), title);
 
-    userEvent.type(getByTestId('descriptionInput'), description);
-    userEvent.click(getByTestId('submitButton'));
+    userEvent.type(getByTestId('ideasFormDescriptionInput'), description);
+    userEvent.click(getByTestId('ideasFormSubmitButton'));
     expect(addIdea).toHaveBeenCalledWith(title, description);
     expect(queryByTestId('ideasFormForm')).toBe(null);
   });
@@ -28,24 +28,24 @@ describe('Ideas Form Component', () => {
   it('should show user characters remaining in description input', () => {
     const { getByTestId, getByText } = render(<IdeasForm />);
 
-    userEvent.click(getByTestId('addIdeaButton'));
+    userEvent.click(getByTestId('ideasFormAddIdeaButton'));
 
     getByTestId('ideasFormForm');
 
     const description =
       'Moving Icebox up from Episode 2 does come with a trade-off: we’ll be delaying the release of our newest Agent for two weeks';
 
-    userEvent.type(getByTestId('descriptionInput'), description);
+    userEvent.type(getByTestId('ideasFormDescriptionInput'), description);
 
     getByText(`Characters remaining: ${140 - description.length}`);
   });
 
   it('should return user back to page when they click cancel', () => {
     const { getByTestId, queryByTestId } = render(<IdeasForm />);
-    userEvent.click(getByTestId('addIdeaButton'));
+    userEvent.click(getByTestId('ideasFormAddIdeaButton'));
     getByTestId('ideasFormForm');
 
-    userEvent.click(getByTestId('cancelButton'));
+    userEvent.click(getByTestId('ideasFormCancelButton'));
 
     expect(queryByTestId('ideasFormForm')).toBe(null);
   });
