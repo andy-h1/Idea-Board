@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const CardWrapper = styled.div`
+export const CardWrapper = styled.form`
   background-color: #fdd835;
   border: 1px solid #90a4ae;
   border-radius: 0.5em;
