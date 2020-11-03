@@ -2,6 +2,9 @@ import React, { useContext, useState } from 'react';
 import { IdeaContext } from '../../contexts/IdeaContext';
 import * as S from './styles';
 
+export const MAX_CHAR_LIMIT = 140;
+export const MIN_CHAR_LIMIT = 120;
+
 export const IdeasForm = () => {
   const { addIdea } = useContext(IdeaContext);
   const [title, setTitle] = useState('');
@@ -54,12 +57,12 @@ export const IdeasForm = () => {
               placeholder="Add your ideas here..."
               value={description}
               onChange={handleDescription}
-              maxLength="140"
+              maxLength={MAX_CHAR_LIMIT}
               required
             />
 
-            {characterCounter > 120 && (
-              <S.CharacterCounter>Characters remaining: {140 - characterCounter}</S.CharacterCounter>
+            {characterCounter > { MIN_CHAR_LIMIT } && (
+              <S.CharacterCounter>Characters remaining: {{ MAX_CHAR_LIMIT } - characterCounter}</S.CharacterCounter>
             )}
           </S.Label>
 

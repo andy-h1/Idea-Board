@@ -24,16 +24,16 @@ export const IdeaContextProvider = ({ children }) => {
   const sortIdea = (sortOption) => {
     const sortedArray = [...ideas].sort((a, b) => {
       if (sortOption === 'titleAsc') {
-        return a.title.toUpperCase() > b.title.toUpperCase() ? -1 : 1;
+        return a.title.localeCompare(b.title);
       }
       if (sortOption === 'titleDesc') {
-        return a.title.toUpperCase() > b.title.toUpperCase() ? 1 : -1;
+        return b.title.localeCompare(a.title);
       }
       if (sortOption === 'timeAsc') {
-        return a.time > b.time ? -1 : 1;
+        return a.time.localeCompare(b.time);
       }
       if (sortOption === 'timeDesc') {
-        return a.time < b.time ? -1 : 1;
+        return b.time.localeCompare(a.time);
       }
       return 0;
     });

@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 import { render } from '../../test-utils';
 import { IdeasForm } from '.';
 
-describe('Ideas Form Component', () => {
+describe('IdeasForm', () => {
   it('should render', () => {
     const { container } = render(<IdeasForm />);
     expect(container.firstChild).toMatchSnapshot();

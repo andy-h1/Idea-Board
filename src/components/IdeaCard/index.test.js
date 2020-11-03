@@ -1,7 +1,7 @@
 import React from 'react';
 import userEvent from '@testing-library/user-event';
 import { render } from '../../test-utils';
-import { IdeaCard } from '.';
+import { IdeaCard, MAX_CHAR_LIMIT } from '.';
 
 const idea = {
   title: 'League of Legends',
@@ -82,7 +82,7 @@ describe('Idea Card Component', () => {
 
     userEvent.clear(getByTestId('ideaCardDescriptionInput'));
     userEvent.type(getByTestId('ideaCardDescriptionInput'), description);
-    getByText(`Characters remaining: ${140 - description.length}`);
+    getByText(`Characters remaining: ${MAX_CHAR_LIMIT - description.length}`);
   });
 
   it('should call remove idea when user clicks delete button', () => {
