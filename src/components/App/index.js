@@ -8,12 +8,14 @@ import * as S from './styles';
 
 const App = () => {
   return (
-    <IdeaContextProvider>
+    <>
       <S.GlobalStyle />
-      <IdeaBoardPage />
-      <IdeasForm />
-      <IdeasList />
-    </IdeaContextProvider>
+      <IdeaContextProvider>
+        <IdeaBoardPage />
+        <IdeasForm />
+        <IdeasList />
+      </IdeaContextProvider>
+    </>
   );
 };
 

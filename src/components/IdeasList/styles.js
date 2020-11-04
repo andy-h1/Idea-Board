@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
 
 export const List = styled.ul`
   list-style: none;
-  padding: 0;
+  padding: 1em;
   display: grid;
   grid-gap: 1em;
   grid-template: repeat(auto-fill, minmax(320px, 1fr)) / repeat(auto-fill, minmax(320px, 1fr));
