@@ -8,6 +8,6 @@ body {
  margin: 0 auto;
  font-family: 'Noto Sans JP', sans-serif;
  padding: 1em;
- min-width: 320px;
+ /* min-width: 320px; */
 }
 `;

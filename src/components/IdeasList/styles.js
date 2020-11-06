@@ -12,8 +12,6 @@ export const List = styled.ul`
   display: grid;
   grid-gap: 1em;
   grid-template: repeat(auto-fill, minmax(320px, 1fr)) / repeat(auto-fill, minmax(320px, 1fr));
-  /* grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-template-rows: repeat(auto-fill, minmax(300px, 1fr)); */
   place-items: center;
   place-content: space-around;
 `;

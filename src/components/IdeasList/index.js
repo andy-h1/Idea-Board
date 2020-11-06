@@ -7,7 +7,6 @@ export const IdeasList = () => {
   const { ideas, sortIdea } = useContext(IdeaContext);
 
   const handleChange = (event) => {
-    console.log(event.target.value);
     sortIdea(event.target.value);
   };
 
