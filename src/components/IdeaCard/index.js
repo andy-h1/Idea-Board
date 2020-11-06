@@ -67,7 +67,7 @@ export const IdeaCard = ({ idea }) => {
           onChange={handleChangeDescription}
           maxLength={MAX_CHAR_LIMIT}
         />
-        {characterCounter > { MIN_CHAR_LIMIT } && (
+        {characterCounter > MIN_CHAR_LIMIT && (
           <S.CharacterCounter>Characters remaining: {MAX_CHAR_LIMIT - characterCounter}</S.CharacterCounter>
         )}
       </S.Label>

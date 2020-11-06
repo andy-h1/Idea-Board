@@ -1,47 +1,45 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Idea Card Component should render 1`] = `
-<div>
-  <div
-    class="sc-bdnylx eHYhos"
-    data-testid="ideaCardCard"
+<form
+  class="sc-bdnylx eHYhos"
+  data-testid="ideaCardCard"
+>
+  <h3
+    class="sc-eCApGN jmaljw"
   >
-    <h3
-      class="sc-eCApGN jmaljw"
+    League of Legends
+  </h3>
+  <p
+    class="sc-jSFkmK liTLRo"
+  >
+    MOBA
+  </p>
+  <p
+    class="sc-gKAblj kmRkkF"
+  >
+    Time 
+    created
+    : 
+    00:00:00
+  </p>
+  <div
+    class="sc-iCoHVE gTSoTY"
+  >
+    <button
+      class="sc-fujyUd jNHdoZ"
+      data-testid="ideaCardRemoveButton"
+      type="button"
     >
-      League of Legends
-    </h3>
-    <p
-      class="sc-jSFkmK liTLRo"
+      Delete
+    </button>
+    <button
+      class="sc-fujyUd jNHdoZ"
+      data-testid="ideaCardEditButton"
+      type="button"
     >
-      MOBA
-    </p>
-    <p
-      class="sc-gKAblj kmRkkF"
-    >
-      Time 
-      created
-      : 
-      00:00:00
-    </p>
-    <div
-      class="sc-iCoHVE gTSoTY"
-    >
-      <button
-        class="sc-fujyUd jNHdoZ"
-        data-testid="ideaCardRemoveButton"
-        type="button"
-      >
-        Delete
-      </button>
-      <button
-        class="sc-fujyUd jNHdoZ"
-        data-testid="ideaCardEditButton"
-        type="button"
-      >
-        Edit
-      </button>
-    </div>
+      Edit
+    </button>
   </div>
-</div>
+</form>
 `;

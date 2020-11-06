@@ -1,7 +1,7 @@
 import React from 'react';
 import userEvent from '@testing-library/user-event';
 import { render } from '../../test-utils';
-import { IdeasForm } from '.';
+import { IdeasForm, MAX_CHAR_LIMIT } from '.';
 
 describe('IdeasForm', () => {
   it('should render', () => {
@@ -37,7 +37,7 @@ describe('IdeasForm', () => {
 
     userEvent.type(getByTestId('ideasFormDescriptionInput'), description);
 
-    getByText(`Characters remaining: ${140 - description.length}`);
+    getByText(`Characters remaining: ${MAX_CHAR_LIMIT - description.length}`);
   });
 
   it('should return user back to page when they click cancel', () => {
