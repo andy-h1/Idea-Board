@@ -2,7 +2,7 @@
 
 exports[`Idea Card Component should render 1`] = `
 <form
-  class="sc-bdnylx eHYhos"
+  class="sc-bdnylx hBwQcZ"
   data-testid="ideaCardCard"
 >
   <h3
@@ -11,7 +11,7 @@ exports[`Idea Card Component should render 1`] = `
     League of Legends
   </h3>
   <p
-    class="sc-jSFkmK liTLRo"
+    class="sc-jSFkmK ijWLCw"
   >
     MOBA
   </p>
@@ -27,14 +27,14 @@ exports[`Idea Card Component should render 1`] = `
     class="sc-iCoHVE gTSoTY"
   >
     <button
-      class="sc-fujyUd jNHdoZ"
+      class="sc-fujyUd fxUbUe"
       data-testid="ideaCardRemoveButton"
       type="button"
     >
       Delete
     </button>
     <button
-      class="sc-fujyUd jNHdoZ"
+      class="sc-fujyUd fxUbUe"
       data-testid="ideaCardEditButton"
       type="button"
     >
