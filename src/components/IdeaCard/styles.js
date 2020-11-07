@@ -1,10 +1,11 @@
 import styled from 'styled-components';
+import { boxShadow, colours } from '../../tokens';
 
 export const CardWrapper = styled.form`
-  background-color: #fdd835;
-  border: 1px solid #90a4ae;
+  background-color: ${colours.grey};
+  border: 1px solid ${colours.black};
   border-radius: 0.5em;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+  box-shadow: ${boxShadow};
   margin: 1em;
   padding: 1em;
   width: 300px;
@@ -15,22 +16,30 @@ export const CardWrapper = styled.form`
 
 export const TitleInput = styled.input`
   width: 100%;
-  background-color: #fdd835;
   font-size: 1.17em;
+  background-color: ${colours.grey};
   font-family: 'Noto Sans JP', sans-serif;
   font-weight: 600;
   text-align: center;
-  border: 1px solid #eee;
+  border: none;
+
+  &:hover {
+    background-color: ${colours.darkGrey};
+  }
 `;
 
 export const DescriptionInput = styled.textarea`
-  background-color: #fdd835;
-  border: 1px solid #eee;
-  font-family: 'Caveat', cursive;
-  font-size: 1.4em;
+  background-color: ${colours.grey};
+  border: none;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 1em;
   margin: 1em 0 0 0;
   width: 100%;
   height: 150px;
+
+  &:hover {
+    background-color: ${colours.darkGrey};
+  }
 `;
 
 export const CharacterCounter = styled.p`
@@ -46,8 +55,9 @@ export const Title = styled.h3`
 `;
 
 export const Description = styled.p`
-  font-family: 'Caveat', cursive;
-  font-size: 1.4em;
+  font-family: 'Noto Sans JP', sans-serif;
+  padding: 0.5em;
+  font-size: 1em;
   height: 150px;
 `;
 
@@ -65,15 +75,19 @@ export const ButtonWrapper = styled.div`
 export const Button = styled.button`
   margin: 0 0.5em;
   padding: 0.5em;
-  background-color: #2980b9;
+  background-color: ${colours.blue};
   border-radius: 0.5em;
   border: none;
-  color: white;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+  color: ${colours.white};
+  box-shadow: ${boxShadow};
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
   width: 100%;
   cursor: pointer;
+
+  &:hover {
+    background-color: ${colours.darkBlue};
+  }
 `;
 
 export const Label = styled.label`

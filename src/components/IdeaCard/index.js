@@ -1,10 +1,8 @@
 import React, { useContext, useState } from 'react';
 import { shape, string } from 'prop-types';
 import { IdeaContext } from '../../contexts/IdeaContext';
+import { MAX_CHAR_LIMIT, MIN_CHAR_LIMIT } from '../../tokens';
 import * as S from './styles';
-
-export const MAX_CHAR_LIMIT = 140;
-export const MIN_CHAR_LIMIT = 120;
 
 export const IdeaCard = ({ idea }) => {
   const { title, description, id, time } = idea;

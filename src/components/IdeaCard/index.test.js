@@ -1,7 +1,8 @@
 import React from 'react';
 import userEvent from '@testing-library/user-event';
 import { render } from '../../test-utils';
-import { IdeaCard, MAX_CHAR_LIMIT } from '.';
+import { IdeaCard } from '.';
+import { MAX_CHAR_LIMIT } from '../../tokens';
 
 const idea = {
   title: 'League of Legends',

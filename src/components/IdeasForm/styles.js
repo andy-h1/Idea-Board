@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { boxShadow, colours } from '../../tokens';
 
 export const FormWrapper = styled.div`
   display: flex;
@@ -12,10 +13,10 @@ export const Form = styled.form`
   justify-content: center;
   align-items: center;
   text-transform: capitalize;
-  background-color: #fdd835;
-  border: 1px solid #90a4ae;
+  background-color: ${colours.grey};
+  border: 1px solid ${colours.black};
   border-radius: 0.5em;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+  box-shadow: ${boxShadow};
   margin: 1em;
   padding: 1em;
   width: 300px;
@@ -57,27 +58,35 @@ export const ButtonWrapper = styled.div`
 export const Button = styled.button`
   margin: 0 0.5em;
   padding: 0.5em;
-  background-color: #2980b9;
+  background-color: ${colours.blue};
   border-radius: 0.5em;
   border: none;
   color: white;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+  box-shadow: ${boxShadow};
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
   width: 100%;
   cursor: pointer;
+
+  &:hover {
+    background-color: ${colours.darkBlue};
+  }
 `;
 
 export const AddIdeaButton = styled.button`
   margin: 1em;
   padding: 0.5em;
-  background-color: #2980b9;
+  background-color: ${colours.blue};
   border-radius: 0.5em;
   border: none;
   color: white;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+  box-shadow: ${boxShadow};
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
   width: 250px;
   cursor: pointer;
+
+  &:hover {
+    background-color: ${colours.darkBlue};
+  }
 `;

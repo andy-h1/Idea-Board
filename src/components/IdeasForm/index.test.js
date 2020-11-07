@@ -1,7 +1,8 @@
 import React from 'react';
 import userEvent from '@testing-library/user-event';
 import { render } from '../../test-utils';
-import { IdeasForm, MAX_CHAR_LIMIT } from '.';
+import { IdeasForm } from '.';
+import { MAX_CHAR_LIMIT } from '../../tokens';
 
 describe('IdeasForm', () => {
   it('should render', () => {
